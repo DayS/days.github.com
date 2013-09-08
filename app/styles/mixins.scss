@@ -1,12 +1,12 @@
 @import "variables";
 
-@mixin innerBorderBottom($size, $color) {
-  -moz-box-shadow: inset $color 0 0 -$size 0;
-  -webkit-box-shadow: inset $color 0 0 -$size 0;
-  box-shadow: inset $color 0 0 -$size 0;
+@mixin innerBorderBottom($color, $size) {
+  -moz-box-shadow: inset $color 0 $size 0 0;
+  -webkit-box-shadow: inset $color 0 $size 0 0;
+  box-shadow: inset $color 0 $size 0 0;
 }
 
-@mixin innerBorder($size, $color) {
+@mixin innerBorder($color, $size) {
   -moz-box-shadow: inset $color $size;
   -webkit-box-shadow: inset $color $size;
   box-shadow: inset $color $size;

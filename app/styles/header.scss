@@ -40,14 +40,15 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 	&.active {
 	  &, a:hover {
-		@include innerBorderBottom(6px, lighten($text-color, 30));
+		@include innerBorderBottom(lighten($text-color, 30), 6px);
+		background: $content-background;
 	  }
 	}
 
 	> a {
 	  &:hover {
-		@include innerBorderBottom(6px, lighten($text-color, 50));
-		background: transparent;
+		@include innerBorderBottom(lighten($text-color, 50), 6px);
+		background: lighten($content-background, 3);
 	  }
 
 	  color: $text-color;
