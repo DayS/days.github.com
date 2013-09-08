@@ -22,6 +22,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 	  padding: 0;
 	  line-height: $header-height;
 	  color: $text-color;
+	  font-variant: small-caps;
 
 	  span {
 		color: lighten($text-color, 20);
@@ -59,6 +60,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 	  padding: 0 15px;
 	  min-width: 120px;
 	  text-align: center;
+	  font-variant: small-caps;
 	}
   }
 }
@@ -73,7 +75,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
   background: url('../images/me.jpg') no-repeat;
   @include imageCircle(140px);
   @include dropShadow(2px, 5px, rgba(88, 88, 88, 0.75));
-  border: solid white 2px;
+  border: solid white 3px;
 }
 
 #social-bar {
