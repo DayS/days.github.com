@@ -19,7 +19,8 @@ body {
 
 .container {
   background: #f2f2f2;
-  padding-top: $navbar-height;
+  padding-top: $header-height;
+  padding-left: $content-margin-left;
   width: $page-width;
   max-width: $page-width;
 }
