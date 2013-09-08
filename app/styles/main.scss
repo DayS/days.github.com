@@ -3,6 +3,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'mixins';
 @import 'header';
+@import 'cards';
 
 .browsehappy {
   margin: 0.2em 0;
@@ -23,6 +24,10 @@ body {
   padding-left: $content-margin-left;
   width: $page-width;
   max-width: $page-width;
+
+  h2 {
+	margin: 35px 0;
+  }
 }
 
 /* Custom page footer */

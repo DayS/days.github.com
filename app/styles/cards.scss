@@ -1,0 +1,29 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+@import 'mixins';
+
+.cards {
+  > .card {
+	width: $card-width;
+	background: white;
+	float: left;
+	margin: 20px;
+	@include dropShadow(2px, 5px, rgba(88, 88, 88, 0.75));
+
+	> img {
+	  width: $card-width;
+	  height: $card-width;
+	}
+
+	> h3 {
+	  text-align: center;
+	  margin: 10px;
+	}
+
+	> p {
+	  text-align: center;
+	  padding: 0 10px 10px 10px;
+	}
+  }
+}
