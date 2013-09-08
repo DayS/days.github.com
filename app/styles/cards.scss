@@ -4,28 +4,18 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 @import 'mixins';
 
 .cards {
-  > .card {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > .card-project,
+  > .card-skill {
 	width: $card-width;
 	background: white;
 	float: left;
 	margin: 20px;
+	padding: 0;
 	@include dropShadow(2px, 5px, rgba(88, 88, 88, 0.75));
-
-	> a {
-	  display: block;
-	  width: $card-width;
-	  height: $card-width;
-
-	  > .overlay-zoom {
-		z-index: 1001;
-		width: $card-width;
-		height: $card-width;
-
-		&:hover {
-		  background: rgba(0, 0, 0, 0.5) url('../images/project_zoom.png') no-repeat center;
-		}
-	  }
-	}
 
 	> h3 {
 	  text-align: center;
@@ -36,6 +26,26 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 	  text-align: center;
 	  padding: 0 10px 10px 10px;
 	}
+  }
+
+  > .card-project > a {
+	display: block;
+	width: $card-width;
+	height: $card-width;
+
+	> .overlay-zoom {
+	  z-index: 1001;
+	  width: $card-width;
+	  height: $card-width;
+
+	  &:hover {
+		background: rgba(0, 0, 0, 0.5) url('../images/project_zoom.png') no-repeat center;
+	  }
+	}
+  }
+
+  > .card-skill {
+
   }
 
 }
