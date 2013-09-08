@@ -1,0 +1,60 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+@import 'mixins';
+
+/* Custom page header */
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.7);
+
+  .header-content {
+	max-width: $page-width;
+	margin: 0 auto;
+	padding: 0 15px;
+	height: $header-height;
+	background: white;
+
+	h3 {
+	  margin: 0;
+	  padding: 0;
+	  line-height: $header-height;
+	  color: $text-color;
+
+	  span {
+		color: lighten($text-color, 20);
+	  }
+	}
+  }
+}
+
+.nav-items {
+  font-size: 22px;
+
+  li {
+	background: transparent;
+	float: left;
+
+	&.active {
+	  &, a:hover {
+		@include innerBorderBottom(6px, lighten($text-color, 30));
+	  }
+	}
+
+	> a {
+	  &:hover {
+		@include innerBorderBottom(6px, lighten($text-color, 50));
+		background: transparent;
+	  }
+
+	  color: $text-color;
+	  background: transparent;
+	  height: $header-height;
+	  line-height: $header-height;
+	  margin: 0;
+	  padding: 0 15px;
+	}
+  }
+}
