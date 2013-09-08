@@ -16,6 +16,7 @@
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<!-- build:css(.tmp) styles/main.css -->
 	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
 	<!-- endbuild -->
 	<!-- build:js scripts/vendor/modernizr.js -->
 	<script src="bower_components/modernizr/modernizr.js"></script>
@@ -30,9 +31,15 @@
 <div class="header">
 	<div class="header-content">
 		<ul class="nav nav-items pull-right">
-			<li class="active"><a href="#">About me</a></li>
-			<li><a href="#">Projects</a></li>
-			<li><a href="#">Skills</a></li>
+			<li class="active">
+				<a href="#about"><i class="icon-user"></i>About me</a>
+			</li>
+			<li>
+				<a href="#projects"><i class="icon-coffee"></i>Projects</a>
+			</li>
+			<li>
+				<a href="#skills"><i class="icon-star"></i>Skills</a>
+			</li>
 		</ul>
 		<h3 class="text-muted">Damien Villeneuve</h3>
 
@@ -69,7 +76,7 @@
 <div class="container">
 	<div class="section">
 		<div>
-			<h2>About me</h2>
+			<h2><a name="about"></a>About me</h2>
 
 			<p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps
 				or sites.</p>
@@ -95,7 +102,7 @@
 
 	<div class="section">
 		<div>
-			<h2>My projects</h2>
+			<h2><a name="projects"></a>My projects</h2>
 
 			<ul class="cards">
 				<li class="card-project">
@@ -163,7 +170,7 @@
 
 	<div class="section">
 		<div>
-			<h2>Skills</h2>
+			<h2><a name="skills"></a>Skills</h2>
 
 			<ul class="cards">
 				<li class="card-skill">
@@ -178,7 +185,8 @@
 	<div class="footer">
 		<p>Design and development by <strong>Damien Villeneuve</strong> © 2013</p>
 
-		<p>Sources are on <a target="_blank" href="https://github.com/DayS/days.github.com">Github</a></p>
+		<p>Sources are on <i class="icon-github"></i> <a target="_blank" href="https://github.com/DayS/days.github.com">Github</a>
+		</p>
 	</div>
 
 </div>
