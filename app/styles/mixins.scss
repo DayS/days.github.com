@@ -17,3 +17,13 @@
   -webkit-border-radius: $size;
   -moz-border-radius: $size;
 }
+
+@mixin dropShadow($offset, $radius, $color) {
+  @include shadow($offset, $offset, $radius, $color);
+}
+
+@mixin shadow($x-offset, $y-offset, $radius, $color) {
+  box-shadow: $x-offset $y-offset $radius $color;
+  -webkit-box-shadow: $x-offset $y-offset $radius $color;
+  -moz-box-shadow: $x-offset $y-offset $radius $color;
+}

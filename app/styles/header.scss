@@ -68,5 +68,6 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
   height: 140px;
   background: url('../images/me.jpg') no-repeat;
   @include imageCircle(140px);
+  @include dropShadow(2px, 5px, rgba(88, 88, 88, 0.75));
   border: solid white 2px;
 }
