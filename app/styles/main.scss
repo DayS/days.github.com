@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-  background: #f2f2f2;
+  background: $content-background;
   padding-top: $header-height;
   padding-left: $content-margin-left;
   width: $page-width;

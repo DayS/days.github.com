@@ -13,3 +13,10 @@ $avatar-size: 140px;
 
 // Content
 $content-margin-left: 100px;
+$content-background: #f2f2f2;
+
+// Social bar
+$social-img-size: 64px;
+$social-img-margin: 10px;
+$social-bar-width: #{$social-img-size + $social-img-margin * 2};
+$social-bar-left: #{-($social-img-size + $social-img-margin * 2) / 2};
