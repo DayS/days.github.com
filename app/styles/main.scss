@@ -31,13 +31,17 @@ body {
   }
 }
 
+.clearer {
+  clear: both;
+}
+
 /* Custom page footer */
 .footer {
   clear: both;
   text-align: right;
-  font-size: 0.9em;
+  margin-top: 30px;
   padding-top: 15px;
-  color: #777;
+  color: lighten($text-color, 15);
   border-top: 1px solid #e5e5e5;
 }
 

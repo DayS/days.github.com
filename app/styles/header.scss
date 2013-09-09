@@ -54,10 +54,10 @@
 	  color: $text-color;
 	  background: transparent;
 	  height: $header-height;
-	  line-height: $header-height;
+	  line-height: #{$header-height - 15};
 	  margin: 0;
 	  padding: 0 15px;
-	  min-width: 140px;
+	  min-width: 160px;
 	  text-align: center;
 	  font-variant: small-caps;
 
