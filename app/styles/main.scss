@@ -4,7 +4,6 @@
 @import 'header';
 @import 'cards';
 
-
 .browsehappy {
   margin: 0.2em 0;
   padding: 0.2em 0;
@@ -14,7 +13,7 @@
 
 /* Space out content a bit */
 body {
-  background: $page-background;
+  background: url('../images/background.png') repeat fixed;
   color: $text-color;
 }
 
