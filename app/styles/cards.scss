@@ -43,7 +43,10 @@
   }
 
   > .card-skill {
-
+	> p > i {
+	  font-size: 1.4em;
+	  color: #e3c12f;
+	}
   }
 
 }
