@@ -40,14 +40,14 @@
 
 	&.active {
 	  &, a:hover {
-		@include innerBorderBottom(lighten($text-color, 30), 6px);
+		@include innerBorderBottom(lighten($page-background, 30), 6px);
 		background: $content-background;
 	  }
 	}
 
 	> a {
 	  &:hover {
-		@include innerBorderBottom(lighten($text-color, 50), 6px);
+		@include innerBorderBottom(lighten($page-background, 50), 6px);
 		background: lighten($content-background, 3);
 	  }
 
@@ -57,12 +57,12 @@
 	  line-height: $header-height;
 	  margin: 0;
 	  padding: 0 15px;
-	  min-width: 120px;
+	  min-width: 140px;
 	  text-align: center;
 	  font-variant: small-caps;
 
 	  > i {
-		margin-right: 6px;
+		margin-right: 10px;
 	  }
 	}
   }
