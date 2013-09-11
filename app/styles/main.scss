@@ -31,6 +31,12 @@ body {
   }
 }
 
+.section {
+  > p {
+	margin: 0 20px 10px 20px;
+  }
+}
+
 .clearer {
   clear: both;
 }
