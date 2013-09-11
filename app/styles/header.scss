@@ -89,6 +89,7 @@
   top: -$avatar-size;
   width: $social-bar-width;
   background: $content-background;
+  @include roundedBorder(3px);
   @include dropShadow(2px, 5px, rgba(88, 88, 88, 0.75));
 
   > ul {
@@ -103,7 +104,7 @@
 	  padding-bottom: $social-img-margin;
 
 	  > a:hover > img {
-		@include roundedBorder(15px);
+		padding-left: 15px;
 	  }
 	}
   }
