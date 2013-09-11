@@ -77,7 +77,7 @@
   width: 140px;
   height: 140px;
   background: url('../images/me.jpg') no-repeat;
-  @include imageCircle(140px);
+  @include roundedBorder(140px);
   @include dropShadow(2px, 5px, rgba(88, 88, 88, 0.75));
   border: solid white 3px;
 }
@@ -103,7 +103,7 @@
 	  padding-bottom: $social-img-margin;
 
 	  > a:hover > img {
-		@include imageCircle(15px);
+		@include roundedBorder(15px);
 	  }
 	}
   }

@@ -12,7 +12,7 @@
   box-shadow: inset $color $size;
 }
 
-@mixin imageCircle($size) {
+@mixin roundedBorder($size) {
   border-radius: $size;
   -webkit-border-radius: $size;
   -moz-border-radius: $size;
