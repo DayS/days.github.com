@@ -103,8 +103,13 @@
 	  width: $social-img-size;
 	  padding-bottom: $social-img-margin;
 
+	  > a > img {
+		@include fade(0.2s);
+	  }
+
 	  > a:hover > img {
 		padding-left: 15px;
+		@include fade(0.2s);
 	  }
 	}
   }

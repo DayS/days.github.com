@@ -47,9 +47,12 @@
 	  z-index: 1001;
 	  width: $card-width;
 	  height: $card-width;
+	  background-position: center;
+	  @include fade(0.3s);
 
 	  &:hover {
 		background: rgba(61, 75, 108, 0.4) url('../images/project_zoom.png') no-repeat center;
+		@include fade(0.3s);
 	  }
 	}
   }
