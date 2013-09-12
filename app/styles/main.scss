@@ -37,6 +37,12 @@ body {
   }
 }
 
+#section-about {
+	> p > strong {
+	  font-size: 1.3em;
+	}
+}
+
 .clearer {
   clear: both;
 }
