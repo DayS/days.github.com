@@ -1,6 +1,6 @@
 {
-  "name": "personal",
-  "version": "0.0.0",
+  "name": "Damien Villeneuve",
+  "version": "2.0.0",
   "dependencies": {
     "sass-bootstrap": "~3.0.0",
     "requirejs": "~2.1.8",
