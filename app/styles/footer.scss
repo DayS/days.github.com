@@ -1,0 +1,12 @@
+@import 'sass-bootstrap/lib/bootstrap';
+@import 'mixins';
+
+/* Custom page footer */
+#footer {
+  clear: both;
+  text-align: right;
+  margin-top: 30px;
+  padding-top: 15px;
+  color: lighten($text-color, 15);
+  border-top: 1px solid #e5e5e5;
+}
