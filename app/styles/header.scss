@@ -42,14 +42,14 @@
 
 	&.active {
 	  &, a:hover {
-		@include innerBorderBottom(lighten($page-background, 30), 6px);
+		@include innerBorderBottom($extra-color, 6px);
 		background: $content-background;
 	  }
 	}
 
 	> a {
 	  &:hover {
-		@include innerBorderBottom(lighten($page-background, 50), 6px);
+		@include innerBorderBottom(lighten($extra-color, 20), 6px);
 		background: lighten($content-background, 3);
 	  }
 
