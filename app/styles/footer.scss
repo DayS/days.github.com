@@ -9,6 +9,6 @@
   padding: 20px 10px 10px 10px;
   color: lighten($text-color, 15);
 
-  background: darken($content-background, 4);
+  background: darken($content-background, 4) url('../images/footer-aa.png') no-repeat 100px bottom;
   border-top: 2px solid #d3d3d3;
 }
