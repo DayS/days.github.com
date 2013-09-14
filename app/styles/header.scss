@@ -14,6 +14,7 @@
 	padding: 0;
 	height: $header-height;
 	background: white;
+	@include innerBorderBottom(darken($content-background, 10), -$header-border-size);
 
 	h3 {
 	  margin: 0 0 0 $content-margin-left;
@@ -35,29 +36,40 @@
 .nav-items {
   font-size: 22px;
   padding-right: $header-padding;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
 
   li {
-	background: transparent;
 	float: left;
+	position: relative;
+	display: block;
+	margin: 0 8px;
+	background: transparent;
+	@include fade(0.2s);
 
 	&.active {
-	  &, a:hover {
-		@include innerBorderBottom($extra-color, 6px);
-		background: $content-background;
+	  @include innerBorderBottom($extra-color, $header-border-size);
+	  background: $content-background;
+	}
+	&:not(.active) {
+	  &:hover {
+		@include innerBorderBottom(lighten($extra-color, 20), -$header-border-size);
+		background: lighten($content-background, 3);
+		@include fade(0.2s);
 	  }
 	}
 
 	> a {
-	  &:hover {
-		@include innerBorderBottom(lighten($extra-color, 20), 6px);
-		background: lighten($content-background, 3);
+	  &:focus, &:hover {
+		text-decoration: none;
 	  }
 
+	  position: relative;
+	  display: block;
 	  color: $text-color;
 	  background: transparent;
-	  height: $header-height;
-	  line-height: #{$header-height - 15};
-	  margin: 0 5px;
+	  line-height: $header-height;
 	  padding: 0 15px;
 	  min-width: 160px;
 	  text-align: center;
