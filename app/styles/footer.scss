@@ -5,8 +5,10 @@
 #footer {
   clear: both;
   text-align: right;
-  margin-top: 30px;
-  padding-top: 15px;
+  margin-top: 15px;
+  padding: 20px 10px 10px 10px;
   color: lighten($text-color, 15);
-  border-top: 1px solid #e5e5e5;
+
+  background: darken($content-background, 4);
+  border-top: 2px solid #d3d3d3;
 }

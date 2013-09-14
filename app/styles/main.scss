@@ -21,10 +21,13 @@ body {
 
 .container {
   background: $content-background;
-  padding-top: $header-height;
-  padding-left: $content-margin-left;
+  padding: $header-height 0 0 0;
   width: $page-width;
   max-width: $page-width;
+
+  .content {
+	padding-left: $content-margin-left;
+  }
 
   h2 {
 	margin: 35px 0;
@@ -39,10 +42,10 @@ body {
 }
 
 #section-about {
-	> p > strong {
-	  font-size: 1.3em;
-	  text-shadow: 1px 1px 1px lightgray;
-	}
+  > p > strong {
+	font-size: 1.3em;
+	text-shadow: 1px 1px 1px lightgray;
+  }
 }
 
 .clearer {
