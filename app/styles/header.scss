@@ -70,10 +70,13 @@
 	  color: $text-color;
 	  background: transparent;
 	  line-height: $header-height;
-	  padding: 0 15px;
+	  padding: 0 20px;
 	  min-width: 160px;
 	  text-align: center;
 	  font-variant: small-caps;
+	  font-weight: 300;
+	  font-family: 'Lato';
+	  font-size: 18pt;
 
 	  > i {
 		margin-right: 10px;
