@@ -28,14 +28,17 @@ body {
   .content {
 	padding-left: $content-margin-left;
   }
-
-  h2 {
-	margin: 35px 0;
-	font-variant: small-caps;
-  }
 }
 
 .section {
+  padding: $section-margin 0 0 0;
+
+  a[name] {
+	padding-top: #{$header-height + $section-margin};
+	margin-top: -#{$header-height + $section-margin};
+	display: inline-block; /* required for webkit browsers */
+  }
+
   > p {
 	margin: 0 20px 10px 20px;
   }
