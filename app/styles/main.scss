@@ -44,11 +44,18 @@ body {
 	margin: 15px 20px;
 	font-size: 12pt;
   }
+
+  .arrow {
+	width: 127px;
+	height: 110px;
+	position: relative;
+	background: url('../images/arrow.png') no-repeat left top;
+  }
 }
 
 #section-about {
   > p > strong {
-	font-size: 1.3em;
+	font-size: 1.2em;
 	text-shadow: 1px 1px 1px lightgray;
   }
 }
