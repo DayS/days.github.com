@@ -1,4 +1,3 @@
-@import 'sass-bootstrap/lib/bootstrap';
 @import 'mixins';
 
 .cards {
@@ -6,8 +5,7 @@
   padding: 0;
   list-style: none;
 
-  > .card-project,
-  > .card-skill {
+  > .card-project {
 	width: $card-width;
 	background: white;
 	float: left;
@@ -15,11 +13,6 @@
 	padding: 0;
 	@include roundedBorder(8px);
 	@include dropShadow(2px, 5px, rgba(88, 88, 88, 0.75));
-
-	> a {
-	  border-top: 1px solid #d3d3d3;
-	  border-bottom: 1px solid #d3d3d3;
-	}
 
 	> h3 {
 	  text-align: center;
@@ -32,37 +25,31 @@
 	  }
 	}
 
+	> a {
+	  display: block;
+	  width: $card-width;
+	  height: $card-width;
+	  border-top: 1px solid #d3d3d3;
+	  border-bottom: 1px solid #d3d3d3;
+
+	  > .overlay-zoom {
+		z-index: 1001;
+		width: $card-width;
+		height: $card-width;
+		background-position: center;
+		@include fade(0.3s);
+
+		&:hover {
+		  background: rgba(61, 75, 108, 0.4) url('../images/project_zoom.png') no-repeat center;
+		  @include fade(0.3s);
+		}
+	  }
+	}
+
 	> p {
 	  text-align: center;
 	  padding: 10px;
 	  margin: 0;
 	}
   }
-
-  > .card-project > a {
-	display: block;
-	width: $card-width;
-	height: $card-width;
-
-	> .overlay-zoom {
-	  z-index: 1001;
-	  width: $card-width;
-	  height: $card-width;
-	  background-position: center;
-	  @include fade(0.3s);
-
-	  &:hover {
-		background: rgba(61, 75, 108, 0.4) url('../images/project_zoom.png') no-repeat center;
-		@include fade(0.3s);
-	  }
-	}
-  }
-
-  > .card-skill {
-	> p > i {
-	  font-size: 1.4em;
-	  color: #e3c12f;
-	}
-  }
-
 }
