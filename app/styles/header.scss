@@ -19,11 +19,13 @@
 	h3 {
 	  margin: 0 0 0 $content-margin-left;
 	  padding: 0;
-	  font-size: 30px;
+	  font-size: 34px;
 	  line-height: $header-height;
 	  color: $text-color;
 	  text-shadow: 1px 1px 2px lightgray;
 	  font-variant: small-caps;
+	  font-family: 'Lato';
+	  font-weight: bold;
 
 	  span {
 		color: lighten($text-color, 20);
@@ -33,56 +35,15 @@
   }
 }
 
-.nav-items {
+.quick-desc {
+  padding-right: 50px;
+  line-height: $header-height;
   font-size: 22px;
-  padding-right: $header-padding;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-
-  li {
-	float: left;
-	position: relative;
-	display: block;
-	margin: 0 8px;
-	background: transparent;
-	@include fade(0.2s);
-
-	&.active {
-	  @include innerBorderBottom($extra-color, $header-border-size);
-	  background: $content-background;
-	}
-	&:not(.active) {
-	  &:hover {
-		@include innerBorderBottom(lighten($extra-color, 20), -$header-border-size);
-		background: lighten($content-background, 3);
-		@include fade(0.2s);
-	  }
-	}
-
-	> a {
-	  &:focus, &:hover {
-		text-decoration: none;
-	  }
-
-	  position: relative;
-	  display: block;
-	  color: $text-color;
-	  background: transparent;
-	  line-height: $header-height;
-	  padding: 0 20px;
-	  min-width: 160px;
-	  text-align: center;
-	  font-variant: small-caps;
-	  font-weight: 300;
-	  font-family: 'Lato';
-	  font-size: 18pt;
-
-	  > i {
-		margin-right: 10px;
-	  }
-	}
-  }
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  color: lighten($text-color, 20);
+  float: right;
 }
 
 #avatar {

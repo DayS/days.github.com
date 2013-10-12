@@ -1,7 +1,8 @@
 @import 'variables';
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css';
-@import 'http://fonts.googleapis.com/css?family=Lato:300,400,700,900';
+//@import 'http://fonts.googleapis.com/css?family=Lato:300,400,700,900';
+@import 'http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Roboto+Slab:400,100|Roboto:300,400,100italic';
 @import 'mixins';
 @import 'header';
 @import 'footer';
@@ -34,6 +35,14 @@ body {
 
 .section {
   padding: $section-margin 0 0 0;
+
+  h1 {
+	margin-bottom: 30px;
+
+	> i {
+	  margin-right: 15px;
+	}
+  }
 
   a[name] {
 	padding-top: #{$header-height + $section-margin};
