@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-charcoal text-gray-900 dark:text-gray-100 min-h-screen;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .btn {
+    @apply px-6 py-3 font-semibold rounded-md transition-all duration-300 inline-flex items-center justify-center;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-violet to-cyan text-white hover:from-violet-dark hover:to-cyan-dark;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-r from-violet to-cyan bg-size-200 animate-gradient;
+  }
+}

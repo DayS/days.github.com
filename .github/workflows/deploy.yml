@@ -1,0 +1,76 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build
+        run: npm run build
+      
+      - name: Run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.9.x
+          lhci autorun --upload.target=temporary-public-storage || echo "Lighthouse CI failed, but continuing deployment"
+      
+      - name: Generate sitemap
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url>
+              <loc>https://damienvilleneuve.github.io/</loc>
+              <lastmod>'$(date -u +"%Y-%m-%d")'</lastmod>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
+            </url>
+          </urlset>' > ./dist/sitemap.xml
+      
+      - name: Generate robots.txt
+        run: |
+          echo 'User-agent: *
+          Allow: /
+          Sitemap: https://damienvilleneuve.github.io/sitemap.xml' > ./dist/robots.txt
+      
+      - name: Generate RSS feed
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>
+          <rss version="2.0">
+          <channel>
+            <title>Damien Villeneuve - Portfolio</title>
+            <link>https://damienvilleneuve.github.io/</link>
+            <description>Portfolio de Damien Villeneuve, ingénieur full-stack à Nantes</description>
+            <lastBuildDate>'$(date -u +"%a, %d %b %Y %H:%M:%S GMT")'</lastBuildDate>
+            <item>
+              <title>Portfolio mis à jour</title>
+              <link>https://damienvilleneuve.github.io/</link>
+              <pubDate>'$(date -u +"%a, %d %b %Y %H:%M:%S GMT")'</pubDate>
+              <description>Le portfolio a été mis à jour avec les derniers projets.</description>
+            </item>
+          </channel>
+          </rss>' > ./dist/rss.xml
+      
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages 
