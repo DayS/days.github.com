@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { FaLightbulb, FaRocket, FaHandshake, FaRobot } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 export function BeappCTA() {
+  const { t } = useTranslation();
+  
   return (
     <section className="py-20 bg-gradient-to-br from-[#FF6D3B] to-[#FF8F3B]">
       <div className="container">
@@ -13,10 +16,10 @@ export function BeappCTA() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Vous avez un projet numérique ambitieux ?
+            {t('beappCTA.title')}
           </h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            En tant que directeur technique et ingénieur sénior chez Beapp, je vous mets en relation avec une équipe d'experts passionnés
+            {t('beappCTA.description')}
           </p>
         </motion.div>
 
@@ -45,7 +48,7 @@ export function BeappCTA() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                De l'idée à la réalité
+                {t('beappCTA.tagline')}
               </motion.h3>
               <motion.p 
                 className="text-white/90 text-lg mb-6 text-center lg:text-left"
@@ -54,7 +57,7 @@ export function BeappCTA() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                Agence d'expertise digitale spécialisé dans la conception, le développement et le déploiement de solutions IA, mobiles et web sur-mesure.
+                {t('beappCTA.description2')}
               </motion.p>
               
               <div className="text-center lg:text-left">
@@ -66,7 +69,7 @@ export function BeappCTA() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Découvrir Beapp
+                  {t('beappCTA.buttons.contact')}
                 </motion.a>
               </div>
             </div>
@@ -80,8 +83,8 @@ export function BeappCTA() {
                 transition={{ duration: 0.4, delay: 0.3 }}
               >
                 <FaLightbulb className="text-white text-3xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2 text-center">Conseil & Stratégie</h4>
-                <p className="text-white/80 text-sm text-center">Expertise en conception de produits et stratégie digitale</p>
+                <h4 className="text-white font-semibold mb-2 text-center">{t('beappCTA.services.consulting.title')}</h4>
+                <p className="text-white/80 text-sm text-center">{t('beappCTA.services.consulting.description')}</p>
               </motion.div>
               
               <motion.div 
@@ -92,8 +95,8 @@ export function BeappCTA() {
                 transition={{ duration: 0.4, delay: 0.4 }}
               >
                 <FaRocket className="text-white text-3xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2 text-center">Développement</h4>
-                <p className="text-white/80 text-sm text-center">Applications performantes utilisant les dernières technologies</p>
+                <h4 className="text-white font-semibold mb-2 text-center">{t('beappCTA.services.development.title')}</h4>
+                <p className="text-white/80 text-sm text-center">{t('beappCTA.services.development.description')}</p>
               </motion.div>
               
               <motion.div 
@@ -104,8 +107,8 @@ export function BeappCTA() {
                 transition={{ duration: 0.4, delay: 0.5 }}
               >
                 <FaHandshake className="text-white text-3xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2 text-center">Accompagnement</h4>
-                <p className="text-white/80 text-sm text-center">Support continu et évolution de vos solutions digitales</p>
+                <h4 className="text-white font-semibold mb-2 text-center">{t('beappCTA.services.support.title')}</h4>
+                <p className="text-white/80 text-sm text-center">{t('beappCTA.services.support.description')}</p>
               </motion.div>
               
               <motion.div 
@@ -116,8 +119,8 @@ export function BeappCTA() {
                 transition={{ duration: 0.4, delay: 0.6 }}
               >
                 <FaRobot className="text-white text-3xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2 text-center">Intelligence Artificielle</h4>
-                <p className="text-white/80 text-sm text-center">Solutions innovantes utilisant les dernières avancées en IA</p>
+                <h4 className="text-white font-semibold mb-2 text-center">{t('beappCTA.services.ai.title')}</h4>
+                <p className="text-white/80 text-sm text-center">{t('beappCTA.services.ai.description')}</p>
               </motion.div>
             </div>
           </div>

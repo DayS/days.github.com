@@ -1,5 +1,6 @@
 import { SEO } from './components/SEO';
 import { ThemeToggle } from './components/ThemeToggle';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { ProjectsCarousel } from './components/ProjectsCarousel';
@@ -13,6 +14,7 @@ function App() {
     <>
       <SEO />
       <ThemeToggle />
+      <LanguageSwitcher />
       
       <main>
         <HeroSection />

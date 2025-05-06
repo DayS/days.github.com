@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { IoIosArrowDown, IoIosCode, IoIosBuild, IoMdHammer, IoIosApps, IoMdLaptop, IoIosCog, IoIosOptions, IoIosCreate, IoIosBrowsers } from 'react-icons/io';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // Blueprint line component
 const BlueprintLine = () => {
@@ -203,13 +204,62 @@ const GridDot = () => {
   );
 };
 
-export function HeroSection() {
+// Memoized background component that won't re-render when language changes
+const AnimatedBackground = memo(() => {
   const [elements, setElements] = useState<number[]>([]);
   
   useEffect(() => {
     // Create background elements
     setElements(Array.from({ length: 100 }, (_, i) => i));
   }, []);
+  
+  return (
+    <div className="absolute inset-0 z-0">
+      <motion.div 
+        className="w-full h-full bg-gradient-to-r from-[#1E3A8A] to-[#172554] bg-size-200"
+        animate={{ 
+          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+          opacity: [0.9, 1, 0.9]
+        }}
+        transition={{ 
+          repeat: Infinity, 
+          duration: 10,
+          ease: 'easeInOut'
+        }}
+      />
+      
+      {/* Blueprint grid dots */}
+      {elements.slice(0, 100).map((index) => (
+        <GridDot key={`dot-${index}`} />
+      ))}
+      
+      {/* Blueprint lines */}
+      {elements.slice(0, 25).map((index) => (
+        <BlueprintLine key={`line-${index}`} />
+      ))}
+      
+      {/* Blueprint circles */}
+      {elements.slice(0, 10).map((index) => (
+        <BlueprintCircle key={`circle-${index}`} />
+      ))}
+      
+      {/* Measurement lines */}
+      {elements.slice(0, 15).map((index) => (
+        <MeasurementLine key={`measurement-${index}`} />
+      ))}
+      
+      {/* Creation symbols */}
+      {elements.slice(0, 15).map((index) => (
+        <CreationSymbol key={`symbol-${index}`} />
+      ))}
+    </div>
+  );
+});
+
+AnimatedBackground.displayName = 'AnimatedBackground';
+
+export function HeroSection() {
+  const { t } = useTranslation();
   
   const scrollToProjects = () => {
     const projectsSection = document.getElementById('projects');
@@ -224,45 +274,7 @@ export function HeroSection() {
   
   return (
     <section className="min-h-screen relative flex flex-col justify-center items-center px-4 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <motion.div 
-          className="w-full h-full bg-gradient-to-r from-[#1E3A8A] to-[#172554] bg-size-200"
-          animate={{ 
-            backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-            opacity: [0.9, 1, 0.9]
-          }}
-          transition={{ 
-            repeat: Infinity, 
-            duration: 10,
-            ease: 'easeInOut'
-          }}
-        />
-        
-        {/* Blueprint grid dots */}
-        {elements.slice(0, 100).map((index) => (
-          <GridDot key={`dot-${index}`} />
-        ))}
-        
-        {/* Blueprint lines */}
-        {elements.slice(0, 25).map((index) => (
-          <BlueprintLine key={`line-${index}`} />
-        ))}
-        
-        {/* Blueprint circles */}
-        {elements.slice(0, 10).map((index) => (
-          <BlueprintCircle key={`circle-${index}`} />
-        ))}
-        
-        {/* Measurement lines */}
-        {elements.slice(0, 15).map((index) => (
-          <MeasurementLine key={`measurement-${index}`} />
-        ))}
-        
-        {/* Creation symbols */}
-        {elements.slice(0, 15).map((index) => (
-          <CreationSymbol key={`symbol-${index}`} />
-        ))}
-      </div>
+      <AnimatedBackground />
       
       <div className="container relative z-10 max-w-4xl text-center">
         <motion.h1 
@@ -271,7 +283,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Full‑stack Product Engineer
+          {t('hero.title')}
         </motion.h1>
         
         <motion.p 
@@ -280,7 +292,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Je conçois des apps mobiles, sites web, back‑ends, infra réseau et j'explore la GenAI pour accélérer l'innovation produit.
+          {t('hero.description')}
         </motion.p>
         
         <motion.div 
@@ -295,7 +307,7 @@ export function HeroSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Voir mes projets
+            {t('hero.buttons.projects')}
           </motion.button>
           
           <motion.button
@@ -304,7 +316,7 @@ export function HeroSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Me contacter
+            {t('hero.buttons.contact')}
           </motion.button>
         </motion.div>
       </div>

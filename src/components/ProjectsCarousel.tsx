@@ -5,6 +5,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { ProjectCard } from './ProjectCard';
 import { projects } from '../data/projects';
+import { useTranslation } from 'react-i18next';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -15,6 +16,7 @@ import 'swiper/css/pagination';
 import './ProjectsCarousel.css';
 
 export function ProjectsCarousel() {
+  const { t } = useTranslation();
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   
@@ -26,7 +28,7 @@ export function ProjectsCarousel() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        Mes Projets
+        {t('projects.title')}
       </motion.h2>
       
       <div className="relative px-12 md:px-16">

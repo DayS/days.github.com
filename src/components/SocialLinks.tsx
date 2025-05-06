@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { socialLinks } from '../data/socialLinks';
+import { useTranslation } from 'react-i18next';
 
 export function SocialLinks() {
+  const { t } = useTranslation();
+  
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -27,7 +30,7 @@ export function SocialLinks() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          Retrouvez-moi en ligne
+          {t('socialLinks.title')}
         </motion.h2>
         
         <motion.div 

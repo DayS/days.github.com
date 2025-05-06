@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "title": "Full‑stack Product Engineer",
+    "description": "I design mobile apps, websites, back-ends, network infrastructure, and explore GenAI to accelerate product innovation.",
+    "buttons": {
+      "projects": "View my projects",
+      "contact": "Contact me"
+    }
+  },
+  "about": {
+    "title": "About",
+    "description": "I'm Damien Villeneuve, a full-stack engineer based in Nantes. I design mobile apps, websites, back-ends, network infrastructure, and explore GenAI to accelerate product innovation.",
+    "cards": {
+      "mobile": {
+        "title": "Mobile",
+        "description": "Development of native and cross-platform mobile applications"
+      },
+      "web": {
+        "title": "Web",
+        "description": "Creation of modern and responsive websites and web applications"
+      },
+      "ai": {
+        "title": "AI",
+        "description": "Integration of artificial intelligence services into products"
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "socialLinks": {
+    "title": "Let's connect"
+  },
+  "support": {
+    "title": "Support me",
+    "description": "If you find my work useful, you can support me on these platforms:",
+    "items": {
+      "buyMeACoffee": "Buy me a coffee"
+    }
+  },
+  "beappCTA": {
+    "title": "You have a big digital project?",
+    "description": "As a technical director and senior engineer at Beapp, I can connect you with a team of passionate experts.",
+    "buttons": {
+      "contact": "Discover Beapp"
+    },
+    "tagline": "From idea to reality",
+    "description2": "Digital expertise agency specialized in the design, development and deployment of custom AI, mobile and web solutions.",
+    "services": {
+      "consulting": {
+        "title": "Consulting & Strategy",
+        "description": "Expertise in product design and digital strategy"
+      },
+      "development": {
+        "title": "Development",
+        "description": "High-performance applications using the latest technologies"
+      },
+      "support": {
+        "title": "Support",
+        "description": "Continuous support and evolution of your digital solutions"
+      },
+      "ai": {
+        "title": "Artificial Intelligence",
+        "description": "Innovative solutions using the latest AI advancements"
+      }
+    }
+  },
+  "footer": {
+    "builtWith": "Built with React, Vite & Tailwind CSS",
+    "copyright": "© {{year}} Damien Villeneuve. All rights reserved.",
+    "lastUpdated": "Last updated: {{date}}"
+  }
+} 

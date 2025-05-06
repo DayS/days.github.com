@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "title": "Ingénieur Produit Full‑stack",
+    "description": "Je conçois des apps mobiles, sites web, back‑ends, infra réseau et j'explore la GenAI pour accélérer l'innovation produit.",
+    "buttons": {
+      "projects": "Voir mes projets",
+      "contact": "Me contacter"
+    }
+  },
+  "about": {
+    "title": "À propos",
+    "description": "Je suis Damien Villeneuve, ingénieur full‑stack basé à Nantes. Je conçois des apps mobiles, sites web, back‑ends, infra réseau et j'explore la GenAI pour accélérer l'innovation produit.",
+    "cards": {
+      "mobile": {
+        "title": "Mobile",
+        "description": "Développement d'applications mobiles natives et cross-platform"
+      },
+      "web": {
+        "title": "Web",
+        "description": "Création de sites et applications web modernes et réactives"
+      },
+      "ai": {
+        "title": "AI",
+        "description": "Intégration de services d'intelligence artificielle dans les produits"
+      }
+    }
+  },
+  "projects": {
+    "title": "Projets"
+  },
+  "socialLinks": {
+    "title": "Retrouvez-moi en ligne"
+  },
+  "support": {
+    "title": "Soutenez mon travail",
+    "description": "Si vous trouvez mon travail utile, vous pouvez me soutenir sur ces plateformes :",
+    "items": {
+      "buyMeACoffee": "M'offrir un café"
+    }
+  },
+  "beappCTA": {
+    "title": "Vous avez un projet numérique ambitieux ?",
+    "description": "En tant que directeur technique et ingénieur sénior chez Beapp, je vous mets en relation avec une équipe d'experts passionnés.",
+    "buttons": {
+      "contact": "Découvrir Beapp"
+    },
+    "tagline": "De l'idée à la réalité",
+    "description2": "Agence d'expertise digitale spécialisé dans la conception, le développement et le déploiement de solutions IA, mobiles et web sur-mesure.",
+    "services": {
+      "consulting": {
+        "title": "Conseil & Stratégie",
+        "description": "Expertise en conception de produits et stratégie digitale"
+      },
+      "development": {
+        "title": "Développement",
+        "description": "Applications performantes utilisant les dernières technologies"
+      },
+      "support": {
+        "title": "Accompagnement",
+        "description": "Support continu et évolution de vos solutions digitales"
+      },
+      "ai": {
+        "title": "Intelligence Artificielle",
+        "description": "Solutions innovantes utilisant les dernières avancées en IA"
+      }
+    }
+  },
+  "footer": {
+    "builtWith": "Construit avec React, Vite & Tailwind CSS",
+    "copyright": "© {{year}} Damien Villeneuve. Tous droits réservés.",
+    "lastUpdated": "Dernière mise à jour : {{date}}"
+  }
+} 

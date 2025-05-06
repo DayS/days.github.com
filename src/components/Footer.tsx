@@ -1,9 +1,11 @@
 import { FaRss, FaSitemap } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 export function Footer() {
+  const { t, i18n } = useTranslation();
   const currentYear = new Date().getFullYear();
   const buildDate = import.meta.env.VITE_APP_BUILD_DATE
-    ? new Date(import.meta.env.VITE_APP_BUILD_DATE).toLocaleDateString('fr-FR', {
+    ? new Date(import.meta.env.VITE_APP_BUILD_DATE).toLocaleDateString(i18n.language, {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
@@ -16,11 +18,11 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-gray-600 dark:text-gray-400">
-              &copy; {currentYear} Damien Villeneuve. Tous droits réservés.
+              {t('footer.copyright', { year: currentYear })}
             </p>
             {buildDate && (
               <p className="text-sm text-gray-500 dark:text-gray-500">
-                Dernière mise à jour : {buildDate}
+                {t('footer.lastUpdated', { date: buildDate })}
               </p>
             )}
           </div>

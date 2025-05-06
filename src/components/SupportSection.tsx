@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { supportLink } from '../data/socialLinks';
+import { useTranslation } from 'react-i18next';
 
 export function SupportSection() {
+  const { t } = useTranslation();
   const Icon = supportLink.icon;
   
   return (
@@ -16,9 +18,9 @@ export function SupportSection() {
             transition={{ duration: 0.6 }}
           >
             <Icon className="text-5xl mx-auto mb-4 text-yellow-500" />
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Soutenez mon travail</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">{t('support.title')}</h2>
             <p className="mb-6 text-gray-700 dark:text-gray-300">
-              {supportLink.description}
+              {t('support.description')}
             </p>
             
             <motion.a
@@ -30,7 +32,7 @@ export function SupportSection() {
               whileTap={{ scale: 0.98 }}
             >
               <Icon className="mr-2" />
-              {supportLink.name}
+              {t('support.items.buyMeACoffee')}
             </motion.a>
           </motion.div>
         </div>
