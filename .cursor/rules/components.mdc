@@ -1,0 +1,29 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Components
+
+This project uses React components organized in the `/src/components` directory. 
+
+## Key Components
+
+### Layout Components
+- [HeroSection.tsx](mdc:src/components/HeroSection.tsx) - Hero section at the top of the portfolio
+- [AboutSection.tsx](mdc:src/components/AboutSection.tsx) - About section with personal information
+- [Footer.tsx](mdc:src/components/Footer.tsx) - Site footer with links and copyright information
+- [SupportSection.tsx](mdc:src/components/SupportSection.tsx) - Support or contact section
+
+### Project Components
+- [ProjectsCarousel.tsx](mdc:src/components/ProjectsCarousel.tsx) - Carousel showing portfolio projects
+- [ProjectCard.tsx](mdc:src/components/ProjectCard.tsx) - Individual project card
+
+### UI Components
+- [LanguageSwitcher.tsx](mdc:src/components/LanguageSwitcher.tsx) - Component for switching language
+- [ThemeToggle.tsx](mdc:src/components/ThemeToggle.tsx) - Dark/light mode toggle
+- [SocialLinks.tsx](mdc:src/components/SocialLinks.tsx) - Social media links
+- [BeappCTA.tsx](mdc:src/components/BeappCTA.tsx) - Call-to-action component
+
+### SEO Components
+- [SEO.tsx](mdc:src/components/SEO.tsx) - SEO optimization component using React Helmet

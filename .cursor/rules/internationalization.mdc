@@ -1,0 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Internationalization (i18n)
+
+This project uses i18next for internationalization support.
+
+## Key Files
+- [i18n.ts](mdc:src/i18n.ts) - i18n configuration
+- [i18n.d.ts](mdc:src/i18n.d.ts) - TypeScript type definitions for i18n
+
+## Usage
+- Language switching is handled by the [LanguageSwitcher.tsx](mdc:src/components/LanguageSwitcher.tsx) component
+- Translations are stored in the `/src/locales` directory, with separate files for each language
+- The application supports automatic language detection based on browser settings

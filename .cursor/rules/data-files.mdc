@@ -1,0 +1,26 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Data Files
+
+The application data is stored in TypeScript files in the `/src/data` directory:
+
+## Project Data
+- [projects.ts](mdc:src/data/projects.ts) - Contains information about portfolio projects including:
+  - Project title
+  - Description
+  - Technologies used
+  - Links to live demos or repositories
+  - Images or screenshots
+
+## Social Links
+- [socialLinks.ts](mdc:src/data/socialLinks.ts) - Contains social media links and profiles:
+  - LinkedIn, GitHub, Twitter, etc.
+  - Contact information
+  - Professional platforms and networks
+
+This data is used throughout the site, especially in:
+- [ProjectsCarousel.tsx](mdc:src/components/ProjectsCarousel.tsx) - For displaying projects
+- [SocialLinks.tsx](mdc:src/components/SocialLinks.tsx) - For displaying social media links

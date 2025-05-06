@@ -1,0 +1,30 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Project Overview
+
+This is a personal portfolio website for Damien Villeneuve, a full-stack product engineer based in Nantes, France.
+
+## Tech Stack
+- Built with [Vite](mdc:vite.config.ts), [React 18](mdc:src/main.tsx), and [TypeScript](mdc:tsconfig.json)
+- Styling with [Tailwind CSS](mdc:tailwind.config.js)
+- Animations with Framer Motion
+- Carousels with Swiper.js
+- SEO optimization with React Helmet Async
+- Routing with React Router v6
+- Internationalization with i18next
+
+## Key Entry Points
+- [main.tsx](mdc:src/main.tsx) - Application entry point
+- [App.tsx](mdc:src/App.tsx) - Main application component
+- [index.css](mdc:src/index.css) - Global CSS styles
+
+## Project Structure
+- `/src/components` - React components
+- `/src/pages` - Application pages
+- `/src/data` - Data files (projects, social links)
+- `/src/assets` - Static assets
+- `/src/hooks` - Custom React hooks
+- `/src/locales` - Internationalization files

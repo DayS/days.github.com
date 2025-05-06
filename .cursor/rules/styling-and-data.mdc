@@ -1,0 +1,26 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Styling and Data
+
+## Styling
+This project uses Tailwind CSS for styling:
+- [tailwind.config.js](mdc:tailwind.config.js) - Tailwind configuration
+- [postcss.config.js](mdc:postcss.config.js) - PostCSS configuration
+- [index.css](mdc:src/index.css) - Global CSS styles with Tailwind directives
+
+Component-specific styles may be found in CSS files alongside the components, such as:
+- [ProjectsCarousel.css](mdc:src/components/ProjectsCarousel.css)
+
+## Data
+Project data and other content is stored in the `/src/data` directory. This includes:
+- Project information for the portfolio
+- Social media links
+- Other static content
+
+## Theme
+The project supports both light and dark themes:
+- Theme switching is handled by the [ThemeToggle.tsx](mdc:src/components/ThemeToggle.tsx) component
+- Theme is automatically detected based on user preferences and persisted between sessions
