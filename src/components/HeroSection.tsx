@@ -1,5 +1,16 @@
 import { motion } from 'framer-motion';
-import { IoIosArrowDown, IoIosCode, IoIosBuild, IoMdHammer, IoIosApps, IoMdLaptop, IoIosCog, IoIosOptions, IoIosCreate, IoIosBrowsers } from 'react-icons/io';
+import { 
+  PiArrowDownThin, 
+  PiCodeThin, 
+  PiWrenchThin, 
+  PiPackageThin, 
+  PiDeviceMobileThin, 
+  PiMonitorThin, 
+  PiGearThin, 
+  PiPencilSimpleThin, 
+  PiSquaresFourThin, 
+  PiSparkleThin
+} from 'react-icons/pi';
 import { useEffect, useState, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -130,15 +141,16 @@ const BlueprintCircle = () => {
 const CreationSymbol = () => {
   // Array of symbols representing different aspects of creation
   const symbols = [
-    <IoIosCode />, // Code
-    <IoIosBrowsers />, // Code brackets
-    <IoIosBuild />, // Building/Woodworking
-    <IoMdHammer />, // Building
-    <IoIosOptions />, // Tools
-    <IoIosApps />, // Mobile
-    <IoMdLaptop />, // Computer
-    <IoIosCog />, // Engineering
-    <IoIosCreate />, // Design/Drafting
+    <PiCodeThin />, // Code
+    <PiSquaresFourThin />, // Layout/UI
+    <PiWrenchThin />, // Building/Woodworking
+    <PiPackageThin />, // Building
+    <PiGearThin />, // Tools
+    <PiDeviceMobileThin />, // Mobile
+    <PiMonitorThin />, // Computer
+    <PiGearThin />, // Engineering
+    <PiPencilSimpleThin />, // Design/Drafting
+    <PiSparkleThin />, // AI/Machine Learning
   ];
   
   const symbol = symbols[Math.floor(Math.random() * symbols.length)];
@@ -326,7 +338,7 @@ export function HeroSection() {
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
       >
-        <IoIosArrowDown className="text-white text-3xl" />
+        <PiArrowDownThin className="text-white text-3xl" />
       </motion.div>
     </section>
   );
