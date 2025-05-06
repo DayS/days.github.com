@@ -1,28 +1,10 @@
 {
   "hero": {
     "title": "Ingénieur Produit Full‑stack",
-    "description": "Je conçois des apps mobiles, sites web, back‑ends, infra réseau et j'explore la GenAI pour accélérer l'innovation produit.",
+    "description": "Je conçois des apps mobiles, sites web, back‑ends, et j'explore la GenAI pour accélérer l'innovation produit.",
     "buttons": {
       "projects": "Voir mes projets",
       "contact": "Me contacter"
-    }
-  },
-  "about": {
-    "title": "À propos",
-    "description": "Je suis Damien Villeneuve, ingénieur full‑stack basé à Nantes. Je conçois des apps mobiles, sites web, back‑ends, infra réseau et j'explore la GenAI pour accélérer l'innovation produit.",
-    "cards": {
-      "mobile": {
-        "title": "Mobile",
-        "description": "Développement d'applications mobiles natives et cross-platform"
-      },
-      "web": {
-        "title": "Web",
-        "description": "Création de sites et applications web modernes et réactives"
-      },
-      "ai": {
-        "title": "AI",
-        "description": "Intégration de services d'intelligence artificielle dans les produits"
-      }
     }
   },
   "projects": {

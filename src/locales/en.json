@@ -7,24 +7,6 @@
       "contact": "Contact me"
     }
   },
-  "about": {
-    "title": "About",
-    "description": "I'm Damien Villeneuve, a full-stack engineer based in Nantes. I design mobile apps, websites, back-ends, network infrastructure, and explore GenAI to accelerate product innovation.",
-    "cards": {
-      "mobile": {
-        "title": "Mobile",
-        "description": "Development of native and cross-platform mobile applications"
-      },
-      "web": {
-        "title": "Web",
-        "description": "Creation of modern and responsive websites and web applications"
-      },
-      "ai": {
-        "title": "AI",
-        "description": "Integration of artificial intelligence services into products"
-      }
-    }
-  },
   "projects": {
     "title": "My flagship projects",
     "viewProject": "View project"
