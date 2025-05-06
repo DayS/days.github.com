@@ -281,7 +281,7 @@ export function HeroSection() {
   };
   
   const sendEmail = () => {
-    window.location.href = 'mailto:contact@damienvilleneuve.com';
+    window.location.href = 'mailto:contact@dvilleneuve.fr';
   };
   
   return (

@@ -38,7 +38,7 @@ jobs:
           echo '<?xml version="1.0" encoding="UTF-8"?>
           <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
-              <loc>https://damienvilleneuve.github.io/</loc>
+              <loc>https://dvilleneuve.fr/</loc>
               <lastmod>'$(date -u +"%Y-%m-%d")'</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
@@ -49,7 +49,7 @@ jobs:
         run: |
           echo 'User-agent: *
           Allow: /
-          Sitemap: https://damienvilleneuve.github.io/sitemap.xml' > ./dist/robots.txt
+          Sitemap: https://dvilleneuve.fr/sitemap.xml' > ./dist/robots.txt
       
       - name: Generate RSS feed
         run: |
@@ -57,12 +57,12 @@ jobs:
           <rss version="2.0">
           <channel>
             <title>Damien Villeneuve - Portfolio</title>
-            <link>https://damienvilleneuve.github.io/</link>
+            <link>https://dvilleneuve.fr/</link>
             <description>Portfolio de Damien Villeneuve, ingénieur full-stack à Nantes</description>
             <lastBuildDate>'$(date -u +"%a, %d %b %Y %H:%M:%S GMT")'</lastBuildDate>
             <item>
               <title>Portfolio mis à jour</title>
-              <link>https://damienvilleneuve.github.io/</link>
+              <link>https://dvilleneuve.fr/</link>
               <pubDate>'$(date -u +"%a, %d %b %Y %H:%M:%S GMT")'</pubDate>
               <description>Le portfolio a été mis à jour avec les derniers projets.</description>
             </item>

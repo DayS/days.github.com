@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-
+import { socialLinks } from '../data/socialLinks';
 interface SEOProps {
   title?: string;
   description?: string;
@@ -9,11 +9,13 @@ interface SEOProps {
 
 export function SEO({
   title = 'Damien Villeneuve - Full-stack Product Engineer',
-  description = 'Ingénieur full-stack basé à Nantes. Je conçois des apps mobiles, sites web, back-ends, infra réseau et j\'explore la GenAI pour accélérer l\'innovation produit.',
-  canonical = 'https://damienvilleneuve.github.io/',
+  description = 'Je conçois des apps mobiles, sites web, back‑ends, et j\'explore la GenAI pour accélérer l\'innovation produit.',
+  canonical = 'https://dvilleneuve.fr/',
   image = '/images/og-image.jpg',
 }: SEOProps) {
-  const siteUrl = 'https://damienvilleneuve.github.io';
+  const siteUrl = 'https://dvilleneuve.fr';
+
+  const links = socialLinks.map((link) => link.url);
   
   return (
     <Helmet>
@@ -44,13 +46,7 @@ export function SEO({
           name: 'Damien Villeneuve',
           jobTitle: 'Full-stack Product Engineer',
           url: siteUrl,
-          sameAs: [
-            'https://github.com/damienvilleneuve',
-            'https://linkedin.com/in/damienvilleneuve',
-            'https://twitter.com/damienvilleneuve',
-            'https://mastodon.social/@damienvilleneuve',
-            'https://dev.to/damienvilleneuve',
-          ],
+          sameAs: links,
         })}
       </script>
     </Helmet>
