@@ -17,7 +17,6 @@ This project uses React components organized in the `/src/components` directory.
 
 ### Project Components
 - [ProjectsCarousel.tsx](mdc:src/components/ProjectsCarousel.tsx) - Carousel showing portfolio projects
-- [ProjectCard.tsx](mdc:src/components/ProjectCard.tsx) - Individual project card
 
 ### UI Components
 - [LanguageSwitcher.tsx](mdc:src/components/LanguageSwitcher.tsx) - Component for switching language
