@@ -1,24 +1,10 @@
-import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { ProjectCard } from './ProjectCard';
 import { projects } from '../data/projects';
 import { useTranslation } from 'react-i18next';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-// Custom styles to fix pagination dots
-import './ProjectsCarousel.css';
-
 export function ProjectsCarousel() {
-  const { t } = useTranslation();
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language.startsWith('fr') ? 'fr' : 'en';
   
   return (
     <div className="relative" id="projects">
@@ -31,66 +17,75 @@ export function ProjectsCarousel() {
         {t('projects.title')}
       </motion.h2>
       
-      <div className="relative px-12 md:px-16">
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true,
-            el: '.swiper-pagination',
-          }}
-          onInit={(swiper) => {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            swiper.params.navigation.prevEl = prevRef.current;
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-          className="swiper-container py-8"
-        >
-          {projects.map((project) => (
-            <SwiperSlide key={project.id} className="py-4">
-              <ProjectCard project={project} />
-            </SwiperSlide>
-          ))}
-          <div className="swiper-pagination mt-8"></div>
-        </Swiper>
-        
-        <motion.button
-          ref={prevRef}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg"
-          whileHover={{ 
-            backgroundColor: "#f3f4f6",
-            boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
-          }}
-          whileTap={{ scale: 0.95 }}
-          aria-label="Previous project"
-        >
-          <FaChevronLeft className="text-violet text-xl" />
-        </motion.button>
-        
-        <motion.button
-          ref={nextRef}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg"
-          whileHover={{ 
-            backgroundColor: "#f3f4f6",
-            boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
-          }}
-          whileTap={{ scale: 0.95 }}
-          aria-label="Next project"
-        >
-          <FaChevronRight className="text-violet text-xl" />
-        </motion.button>
+      <div className="space-y-16 md:space-y-24">
+        {projects.map((project, index) => {
+          const isEven = index % 2 === 0;
+          
+          return (
+            <motion.div 
+              key={project.id}
+              className="py-4"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}>
+                {/* Images Section */}
+                <div className="w-full md:w-3/5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {project.images.map((image, imgIndex) => (
+                      <motion.div 
+                        key={imgIndex}
+                        className="overflow-hidden rounded-lg shadow-lg flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-2"
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <img 
+                          src={image} 
+                          alt={`${project.title[currentLang]} - screenshot ${imgIndex + 1}`} 
+                          className="w-full h-auto object-contain max-h-[400px]"
+                          loading="lazy"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Content Section */}
+                <div className="w-full md:w-2/5 flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold mb-1">{project.title[currentLang]}</h3>
+                  <p className="text-lg font-medium text-violet mb-3">{project.tagline[currentLang]}</p>
+                  <p className="mb-4 text-gray-700 dark:text-gray-300">{project.description[currentLang]}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.technologies.map((tech) => (
+                      <span 
+                        key={tech} 
+                        className="px-3 py-1 rounded-full text-sm font-medium bg-gray-200 dark:bg-gray-800"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  {project.url && (
+                    <motion.a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary self-start"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {t('projects.viewProject')}
+                    </motion.a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

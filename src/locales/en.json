@@ -26,7 +26,8 @@
     }
   },
   "projects": {
-    "title": "Projects"
+    "title": "My flagship projects",
+    "viewProject": "View project"
   },
   "socialLinks": {
     "title": "Let's connect"

@@ -26,7 +26,8 @@
     }
   },
   "projects": {
-    "title": "Projets"
+    "title": "Mes projets phares",
+    "viewProject": "Voir le projet"
   },
   "socialLinks": {
     "title": "Retrouvez-moi en ligne"
