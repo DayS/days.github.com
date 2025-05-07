@@ -15,13 +15,18 @@ import { useEffect, useState, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 // Blueprint line component
-const BlueprintLine = () => {
-  // Random position and size
+const BlueprintLine = ({ gridConfig }: { gridConfig: { cellSize: number, verticalCells: number, horizontalCells: number } }) => {
+  // Random position and size based on grid
   const isHorizontal = Math.random() > 0.5;
-  const length = Math.random() * 200 + 100;
-  const thickness = Math.random() * 1.5 + 1;
-  const posX = Math.random() * 100;
-  const posY = Math.random() * 100;
+  const cellSize = gridConfig.cellSize;
+  
+  // Random number of cells for length (between 2 and 5 cells)
+  const numCells = Math.floor(Math.random() * 4) + 2;
+  const length = numCells * cellSize;
+  
+  // Random position snapped to grid
+  const posX = Math.floor(Math.random() * gridConfig.horizontalCells) * cellSize;
+  const posY = Math.floor(Math.random() * gridConfig.verticalCells) * cellSize;
   
   // Random appearance timing
   const delay = Math.random() * 10;
@@ -31,10 +36,10 @@ const BlueprintLine = () => {
     <motion.div
       className="absolute bg-blue-300/40 dark:bg-blue-200/50"
       style={{
-        height: isHorizontal ? `${thickness}px` : `${length}px`,
-        width: isHorizontal ? `${length}px` : `${thickness}px`,
-        left: `${posX}%`,
-        top: `${posY}%`,
+        height: isHorizontal ? '1px' : `${length}px`,
+        width: isHorizontal ? `${length}px` : '1px',
+        left: `${(posX / window.innerWidth) * 100}%`,
+        top: `${(posY / window.innerHeight) * 100}%`,
       }}
       initial={{ opacity: 0, scale: 0 }}
       animate={{ 
@@ -216,13 +221,100 @@ const GridDot = () => {
   );
 };
 
+// Grid lines component for blueprint effect
+const GridLines = ({ gridConfig }: { gridConfig: { cellSize: number, verticalCells: number, horizontalCells: number } }) => {
+  const lines = [];
+  const verticalStep = 100 / gridConfig.verticalCells;
+  const horizontalStep = 100 / gridConfig.horizontalCells;
+  
+  // Create horizontal lines
+  for (let i = 0; i <= gridConfig.verticalCells; i++) {
+    const position = i * verticalStep;
+    lines.push(
+      <motion.div
+        key={`h-${i}`}
+        className="absolute bg-blue-300/20 dark:bg-blue-200/20"
+        style={{
+          height: '1px',
+          width: '100%',
+          top: `${position}%`,
+          left: 0,
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0.2, 0.4, 0.2] }}
+        transition={{
+          repeat: Infinity,
+          duration: 4,
+          delay: i * 0.1,
+        }}
+      />
+    );
+  }
+  
+  // Create vertical lines
+  for (let i = 0; i <= gridConfig.horizontalCells; i++) {
+    const position = i * horizontalStep;
+    lines.push(
+      <motion.div
+        key={`v-${i}`}
+        className="absolute bg-blue-300/20 dark:bg-blue-200/20"
+        style={{
+          width: '1px',
+          height: '100%',
+          left: `${position}%`,
+          top: 0,
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0.2, 0.4, 0.2] }}
+        transition={{
+          repeat: Infinity,
+          duration: 4,
+          delay: i * 0.1,
+        }}
+      />
+    );
+  }
+  
+  return <>{lines}</>;
+};
+
 // Memoized background component that won't re-render when language changes
 const AnimatedBackground = memo(() => {
   const [elements, setElements] = useState<number[]>([]);
+  const [gridConfig, setGridConfig] = useState({ 
+    verticalCells: 15,
+    horizontalCells: 20,
+    cellSize: 75
+  });
   
   useEffect(() => {
     // Create background elements
     setElements(Array.from({ length: 100 }, (_, i) => i));
+    
+    // Update grid configuration
+    const updateGridSize = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      
+      // First, determine the number of cells we want vertically
+      const targetVerticalCells = 15; // This will give us a good density
+      
+      // Calculate the cell size based on the height and desired number of vertical cells
+      const cellSize = height / targetVerticalCells;
+      
+      // Calculate how many cells would fit horizontally with this cell size
+      const horizontalCells = Math.ceil(width / cellSize);
+      
+      setGridConfig({
+        verticalCells: targetVerticalCells,
+        horizontalCells,
+        cellSize
+      });
+    };
+    
+    updateGridSize();
+    // window.addEventListener('resize', updateGridSize);
+    // return () => window.removeEventListener('resize', updateGridSize);
   }, []);
   
   return (
@@ -240,6 +332,9 @@ const AnimatedBackground = memo(() => {
         }}
       />
       
+      {/* Grid lines */}
+      <GridLines gridConfig={gridConfig} />
+      
       {/* Blueprint grid dots */}
       {elements.slice(0, 100).map((index) => (
         <GridDot key={`dot-${index}`} />
@@ -247,7 +342,7 @@ const AnimatedBackground = memo(() => {
       
       {/* Blueprint lines */}
       {elements.slice(0, 25).map((index) => (
-        <BlueprintLine key={`line-${index}`} />
+        <BlueprintLine key={`line-${index}`} gridConfig={gridConfig} />
       ))}
       
       {/* Blueprint circles */}
